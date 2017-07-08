@@ -1,0 +1,73 @@
+<!-- <header>
+    <nav class="navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar mdb-color lighten-3">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <a class="navbar-brand" href="#"> <strong>Home</strong> </a>
+            <div class="collapse navbar-collapse" id="navbarNav1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"> <a class="nav-link" href="#about">Mailbox</a> </li>
+                </ul> <a href="#" id="show_login" class="nav-link waves-effect waves-light"><i class="fa fa-sign-out"></i><span class="hidden-sm-down">Logout</span></a> </div>
+        </div>
+    </nav>
+</header> -->
+<main style="padding-top: 10rem">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h2-responsive" style="text-align: center;">Find Companies and leads</h2>
+                <hr>
+                <form class="form-inline" ng-submit="$event.preventDefault()">
+                    <div class="form-group select1">
+                        <md-autocomplete ng-disabled="ctrl.isDisabled" md-no-cache="ctrl.noCache" md-selected-item="ctrl.selectedItem" md-search-text-change="ctrl.searchTextChange(ctrl.searchText)" md-search-text="ctrl.searchText" md-selected-item-change="ctrl.selectedItemChange(item)" md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item.display" md-menu-class="dropbox" md-min-length="0" placeholder="Company Name">
+                            <md-item-template> <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span> </md-item-template>
+                            <md-not-found> No states matching "{{ctrl.searchText}}" were found. <a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a> </md-not-found>
+                        </md-autocomplete>
+                    </div>
+                    <!-- <div class="md-form form-group"> -->
+                    <div class="form-group select1">
+                        <!-- <label for="exampleSelect1">Select an Industry</label> -->
+                        <select class="form-control" id="selectpicker">
+                            <option value="" selected disabled>Select an Industry</option>
+                            <option value="1">Information Technology</option>
+                            <option value="2">E-commerce</option>
+                            <option value="3">Electrical & Electronics</option>
+                            <option value="4">Manufacturing</option>
+                            <option value="5">Helthcare</option>
+                            <option value="6">BPO</option>
+                            <option value="7">Entertainment</option>
+                            <option value="8">Hotels & Restaurants</option>
+                            <option value="9">Iron & Steel</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control select1" id="selectpicker">
+                            <option value="" selected disabled>Select City</option>
+                            <option value="1">Bangalore</option>
+                            <option value="2">Gurgaon</option>
+                            <option value="3">New Delhi</option>
+                            <option value="4">Noida</option>
+                            <option value="5">Mumbai</option>
+                            <option value="6">Pune</option>
+                            <option value="7">Jaipur</option>
+                            <option value="8">Kota</option>
+                            <option value="9">Patna</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary bmd-btn-fab left" ng-click="search()"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+        
+
+<!--Footer-->
+<!-- <footer class="page-footer blue center-on-small-only">
+    <div class="footer-copyright">
+        <div class="container-fluid">
+            © 2017 Copyright: <a href="https://www.XYX.com"> Comming Soon..... </a>
+        </div>
+    </div>
+</footer> -->
