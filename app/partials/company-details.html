@@ -20,7 +20,6 @@
                     </div>
                     <div class="card-block">
                         <fieldset id="scheduler-border">
-
                             <legend id="scheduler-border">No of Employees</legend>
                             <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn1" class="">1</md-checkbox>
                             <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn2" class="">2</md-checkbox>
@@ -28,7 +27,6 @@
                         </fieldset>
                         <hr>
                         <fieldset id="scheduler-border1">
-
                             <legend id="scheduler-border">Turnover</legend>
                             <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn4" class="">1</md-checkbox>
                             <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn5" class="">2</md-checkbox>
@@ -36,13 +34,11 @@
                         </fieldset>
                         <hr>
                         <fieldset id="scheduler-border2">
-
                             <legend id="scheduler-border">Sector</legend>
                             <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn7" class="">1</md-checkbox>
                             <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn8" class="">2</md-checkbox>
                             <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn9" class="">3</md-checkbox>
                         </fieldset>
-                        
                     </div>
                 </div>
             </div>
@@ -51,23 +47,22 @@
             </div> -->
             <div co-md-9>
                 <div class="wow fadeIn" data-wow-delay="0.2s">
-                <div class="card cd1" style="margin-bottom: 5px">
-                <div class="row">
-                    <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model= "master" ng-change="isSelectAll()" class= "selectall" >Select All</md-checkbox>
-                    <div class="_export">
-                    <button class="btn btn-default" ng-click="export()">Export</button>
+                    <div class="card cd1" style="margin-bottom: 5px">
+                        <div class="row">
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="master" ng-change="isSelectAll()" class="selectall">Select All</md-checkbox>
+                            <div class="_export">
+                                <button class="btn btn-default" ng-click="export()">Export</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                </div>
-                
-                <!-- <input type="checkbox" ng-model="master" ng-change="isSelectAll()">
-                <label>Select All</label> --> 
+                    <!-- <input type="checkbox" ng-model="master" ng-change="isSelectAll()">
+                <label>Select All</label> -->
                     <div class="content cd1">
                         <div class="list-group-item search-result" ng-repeat="(key, value) in companyArray">
-                        <div class="check">
-                        <!-- <input type="Checkbox" class="star" title="bookmark page" ng-model = "value.checklist" dataid="{{ key }}"> -->
-                            <input type="checkbox" ng-model="value.selected" class="star" ng-value="value" ng-change="isLabelChecked()"/>
-                        </div>
+                            <div class="check">
+                                <!-- <input type="Checkbox" class="star" title="bookmark page" ng-model = "value.checklist" dataid="{{ key }}"> -->
+                                <input type="checkbox" ng-model="value.selected" class="star" ng-value="value" ng-change="isLabelChecked()" />
+                            </div>
                             <div class="flex-column" style="width: 30rem">
                                 <table>
                                     <tbody>
@@ -103,12 +98,9 @@
                                     </tbody>
                                 </table>
                             </div>
-                            
                             <button class="btn btn-default" ng-click="showAdvanced($event)">Connect</button>
-                            
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -122,68 +114,3 @@
         </div>
     </div>
 </footer>
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="card card-block">
-                <fieldset id="scheduler-border">
-                    <legend id="scheduler-border">No of Employees</legend>
-                    <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="data.cb5" class="md-primary">1</md-checkbox>
-                    <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="data.cb6" class="md-primary">2</md-checkbox>
-                    <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="data.cb7" class="md-primary">3</md-checkbox>
-                </fieldset>
-            </div>
-        </div>
-        <div class="col-md-9">
-            <div class="list-group content">
-                <div class="list-group-item list-group-item-action search-result" ng-repeat="companyDetail in companyDetails">
-                    <div class="flex-column" style="width: 30rem">
-                        <table>
-                            <tbody>
-                                <p class="head">{{companyDetail.Name}}</p>
-                                <tr>
-                                    <td style="width: 8rem"><strong>Industry</strong></td>
-                                    <td> : {{companyDetail.industry}}</td>
-                                </tr>
-                                <tr>
-                                    <td style="width: 8rem"><strong>Sub Industry</strong></td>
-                                    <td> : {{companyDetail.subIndustry}}</td>
-                                </tr>
-                                <tr>
-                                    <td style="width: 8rem"><strong>Company Type</strong></td>
-                                    <td> : {{companyDetail.companyType}}</td>
-                                </tr>
-                                <tr>
-                                    <td style="width: 8rem"><strong>Level Of Office</strong></td>
-                                    <td> : {{companyDetail.levelOfOffice}}</td>
-                                </tr>
-                                <tr>
-                                    <td style="width: 8rem"><strong>Location</strong></td>
-                                    <td> : {{companyDetail.location}}</td>
-                                </tr>
-                                <tr>
-                                    <td style="width: 8rem"><strong>Contact</strong></td>
-                                    <td> : {{companyDetail.contact}}</td>
-                                </tr>
-                                <tr>
-                                    <td style="width: 8rem"><strong>Email</strong></td>
-                                    <td> : {{companyDetail.email}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="pull-right connect">
-                        <button class="btn btn-primary" ng-click="showAdvanced($event)">Connect</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
-<br>
-<footer style="background-color: #ccc;">
-    <div layout="row" layout-align="center center">
-        <h2>Contact Us</h2>
-    </div>
-</footer> -->

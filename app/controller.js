@@ -37,47 +37,30 @@
             });
         }
 
-
     })
-
 
 
 
 
     .controller('HomeCtrl', function($scope, $timeout, $q, $log, $state) {
 
-        // $scope.companyList = [
-        //   {name:"Google india pvt Ltd"}, 
-        //   {name:"Microsoft india pvt Ltd"},
-        //   {name:"Oracle India Pvt Ltd"},
-        //   {name:"VMware"} ,
-        //   {name:"Tata Consultancy Services"}, 
-        //   {name:"Wipro Technologies Limited"}, 
-        //   {name:"Trigent Software Ltd"},
-        //   {name:"Infosys Technologies Ltd"},
-        //   {name:"Tech Mahindra"},
-        //   {name:"HCL Technologies Ltd"},
-        //   {name:"Honeywell Technology Solutions Lab Pvt Ltd"} ,
-        //   {name:"IBM India Pvt Ltd"}
-
-        // ];
 
         var self = this;
         self.simulateQuery = false;
         self.isDisabled = false;
         // list of states to be displayed
-        self.states = loadStates();
+        self.companies = loadCompanies();
         self.querySearch = querySearch;
         self.selectedItemChange = selectedItemChange;
         self.searchTextChange = searchTextChange;
-        self.newState = newState;
+        self.newCompany = newCompany;
 
-        function newState(state) {
+        function newCompany(company) {
             alert("This functionality is yet to be implemented!");
         }
 
         function querySearch(query) {
-            var results = query ? self.states.filter(createFilterFor(query)) : self.states,
+            var results = query ? self.companies.filter(createFilterFor(query)) : self.companies,
                 deferred;
             if (self.simulateQuery) {
                 deferred = $q.defer();
@@ -99,33 +82,30 @@
             $log.info('Item changed to ' + JSON.stringify(item));
         }
         //build list of states as map of key-value pairs
-        function loadStates() {
-            var allStates = 'Indian Oil Corporation, Reliance Industries, Tata Motors, State Bank of India, Bharat Petroleum,Google,\
-                 Bharat Heavy Electricals, Bharti Airtel, Abacus Inc., Accenture Services Pvt. Ltd., Accord Software & Systems Pvt. Ltd., Alliance Semiconductor (India) Pvt. Ltd.,\
-                 Microsoft, Microland, Oracle, VMvare, Primefocus, SAP, Times Inc, Facebook,Infosys, Tata Consultancy Services, Wipro, HCL Technologies\
-                 IBM India Pvt Ltd., Mindtree, Maruti Suzuki, Tech Mahindra, Ericsson,Hewlett Packard, Symantec,\
-                 Lupin, Nintendo, EMC, Dell, Global Logic, Vodafone Nokia Siemens Networks, Delloite';
-            return allStates.split(/, +/g).map(function(state) {
+        function loadCompanies() {
+            var allCompanies = 'Indian Oil Corporation, Reliance Industries, Tata Motors, State Bank of India, Bharat Petroleum,Google,\
+             Bharat Heavy Electricals, Bharti Airtel, Abacus Inc., Accenture Services Pvt. Ltd., Accord Software & Systems Pvt. Ltd., Alliance Semiconductor (India) Pvt. Ltd.,\
+             Microsoft, Microland, Oracle, VMvare, Primefocus, SAP, Times Inc, Facebook,Infosys, Tata Consultancy Services, Wipro, HCL Technologies\
+             IBM India Pvt Ltd., Mindtree, Maruti Suzuki, Tech Mahindra, Ericsson,Hewlett Packard, Symantec,\
+             Lupin, Nintendo, EMC, Dell, Global Logic, Vodafone Nokia Siemens Networks, Delloite';
+            return allCompanies.split(/, +/g).map(function(company) {
                 return {
-                    value: state.toLowerCase(),
-                    display: state
+                    value: company.toLowerCase(),
+                    display: company
                 };
             });
         }
         //filter function for search query
         function createFilterFor(query) {
             var lowercaseQuery = angular.lowercase(query);
-            return function filterFn(state) {
-                return (state.value.indexOf(lowercaseQuery) === 0);
+            return function filterFn(company) {
+                return (company.value.indexOf(lowercaseQuery) === 0);
             };
         }
 
         $scope.search = function() {
             $state.go('company-details');
         }
-
-
-
 
     })
 
@@ -148,7 +128,9 @@
 
                 $scope.model.selectedLabelList = angular.copy($scope.companyArray);
 
-            } else { $scope.master = false; }
+            } else {
+                $scope.master = false;
+            }
             angular.forEach($scope.companyArray, function(item) {
                 item.selected = $scope.master;
             });
@@ -158,7 +140,9 @@
             var _name = this.value;
             if (this.value.selected) {
                 $scope.model.selectedLabelList.push(_name);
-                if ($scope.model.selectedLabelList.length == $scope.companyArray.length) { $scope.master = true; }
+                if ($scope.model.selectedLabelList.length == $scope.companyArray.length) {
+                    $scope.master = true;
+                }
             } else {
                 $scope.master = false;
                 var index = $scope.model.selectedLabelList.indexOf(_name);
@@ -167,33 +151,12 @@
 
         }
 
-
-        // console.log($scope.selected);
-
-
-
         $scope.export = function() {
 
             dataservice.data = $scope.model.selectedLabelList;
             // console.log(dataservice.data);
             $state.go('table');
         }
-
-
-
-
-
-
-
-
-
-
-
-
-        // $scope.companyDetails = companydetails.partial();
-
-        // console.log($scope.companyDetails);
-
 
         $scope.showAdvanced = function(ev) {
             $mdDialog.show({
@@ -224,8 +187,6 @@
             };
         }
 
-
-
     })
 
 
@@ -246,10 +207,5 @@
         // console.log(dataservice.data[0]);
 
     })
-
-
-
-
-
 
 })();

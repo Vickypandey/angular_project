@@ -88,6 +88,7 @@ button.btn.btn-fb {
 }
 
 
+
 /*main {
     padding-top: 10rem;
     padding-bottom: 2rem;
@@ -172,6 +173,7 @@ md-checkbox .md-icon {
 }
 
 
+
 /*.list-group.content {
     margin-top: 6rem;
 }*/
@@ -238,23 +240,28 @@ md-dialog.md-transition-in {
     box-shadow: rgba(0, 0, 0, 0.156863) 0px 1px 1px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 2px 0px;
 }
 
+
 /*star*/
+
 .star {
-    visibility:hidden;
-    font-size:30px;
+    visibility: hidden;
+    font-size: 30px;
     margin-right: 30px;
-    cursor:pointer;
+    cursor: pointer;
 }
+
 .star:before {
-   content: "\2606";
-   position: absolute;
-   visibility:visible;
+    content: "\2606";
+    position: absolute;
+    visibility: visible;
 }
+
 .star:checked:before {
-   content: "\2605";
-   position: absolute;
-   color: orangered;
+    content: "\2605";
+    position: absolute;
+    color: orangered;
 }
+
 
 /*star*/
 
@@ -266,13 +273,18 @@ div md-checkbox.selectall {
     margin: 5px 0px 0px 400px;
 }
 
-table.md-table td.md-cell {border-left: 1px rgba(0, 0, 0, 0.12) solid; padding: 0 24px !important;}
+table.md-table td.md-cell {
+    border-left: 1px rgba(0, 0, 0, 0.12) solid;
+    padding: 0 24px !important;
+}
 
 table.md-table th.md-column {
     /*color: red !important;*/
-    border: 1px rgba(0, 0, 0, 0.12) solid; padding: 0 24px !important;
-    border-left: 1px rgba(0, 0, 0, 0.12) solid; padding: 0 24px !important;
-    background-color: rgb(0,255,255) !important;
+    border: 1px rgba(0, 0, 0, 0.12) solid;
+    padding: 0 24px !important;
+    border-left: 1px rgba(0, 0, 0, 0.12) solid;
+    padding: 0 24px !important;
+    background-color: rgb(0, 255, 255) !important;
     background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eee), color-stop(1, #fff));
 }
 
@@ -286,13 +298,13 @@ table.md-table td {
 }
 
 table.md-table th.md-column {
-    color:  rgba(0, 0, 0, 0.87) !important;
+    color: rgba(0, 0, 0, 0.87) !important;
 }
 
-table.md-table md-icon.md-sort-icon{
-    color: rgba(0, 0, 0, 0.87) !important; 
+table.md-table md-icon.md-sort-icon {
+    color: rgba(0, 0, 0, 0.87) !important;
 }
 
 table.md-table tr.md-row {
     height: 45px !important;
-} 
+}

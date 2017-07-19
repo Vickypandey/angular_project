@@ -1,31 +1,3 @@
-<!-- <div layout-margin>
-   <mdt-table table-card="{title: 'Company Detail'}" 
-             mdt-row="{
-                      data: tableDatas,
-                      'column-keys': [
-                          'Name',
-                          'industry',
-                          'subIndustry',
-                          'companyType',
-                          'levelOfOffice',
-                          'location',
-                          'contact',
-                          'email'
-                      ]
-                      }">
-    <mdt-header-row>
-      <mdt-column align-rule="left">Name</mdt-column>
-      <mdt-column align-rule="right">Industry</mdt-column>
-      <mdt-column align-rule="right">Sub Industry</mdt-column>
-      <mdt-column align-rule="right">Company Type</mdt-column>
-      <mdt-column align-rule="right">Level of Office</mdt-column>
-      <mdt-column align-rule="right">Location</mdt-column>
-      <mdt-column align-rule="right">Contact</mdt-column>
-      <mdt-column align-rule="right">Email</mdt-column>
-    </mdt-header-row>
-  </mdt-table>
-</div>
- -->
 <header>
     <nav class="navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar mdb-color lighten-3">
         <div class="container">
@@ -39,50 +11,46 @@
     </nav>
 </header>
 <md-card style="margin-top: 6rem">
- <md-toolbar class="md-table-toolbar md-default">
- <div class="row">
-  <div class="md-toolbar-tools">
-    <span>Company Details</span>
-    <div class="text-right">
-    <button class="btn btn-default" ng-click="exportToSf()">Export to Sf</button>
-    </div>
-  </div>
-  
-  
-  </div>
-</md-toolbar>
-
-
-<md-table-container>
-  <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
-    <thead md-head md-order="query.order" md-on-reorder="getTableDatas">
-      <tr md-row>
-        <th md-column md-order-by="Name"><span>Name</span></th>
-        <th md-column md-order-by="industry"><span>Industry</span></th>
-        <th md-column md-order-by="subIndustry"><span>Sub Industry</span></th>
-        <th md-column md-order-by="salesforce"><span>Salesforce</span></th>
-        <th md-column md-order-by="companyType"><span>Company Type</span></th>
-        <th md-column md-order-by="levelOfOffice"><span>Level Of Office</span></th>
-        <th md-column md-order-by="location"><span>Location</span></th>
-        <th md-column md-numeric md-order-by="contact"><span>Contact</span></th>
-        <th md-column md-order-by="email"><span>Email</span></th>
-      </tr>
-    </thead>
-    <tbody md-body>
-      <tr md-row md-select="data" md-select-id="Name" md-auto-select ng-repeat="tableData in tableDatas | toArray:false | filter:search | orderBy: query.order">
-        <td md-cell>{{tableData.Name}}</td>
-        <td md-cell>{{tableData.industry}}</td>
-        <td md-cell>{{tableData.subIndustry}}</td>
-        <td md-cell>{{}}</td>
-        <td md-cell>{{tableData.companyType}}</td>
-        <td md-cell>{{tableData.levelOfOffice}}</td>
-        <td md-cell>{{tableData.location}}</td>
-        <td md-cell>{{tableData.contact}}</td>
-        <td md-cell>{{tableData.email}}</td>
-      </tr>
-    </tbody>
-  </table>
-</md-table-container>
+    <md-toolbar class="md-table-toolbar md-default">
+        <div class="row">
+            <div class="md-toolbar-tools">
+                <span>Company Details</span>
+                <div class="text-right">
+                    <button class="btn btn-default" ng-click="exportToSf()">Export to Sf</button>
+                </div>
+            </div>
+        </div>
+    </md-toolbar>
+    <md-table-container>
+        <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+            <thead md-head md-order="query.order" md-on-reorder="getTableDatas">
+                <tr md-row>
+                    <th md-column md-order-by="Name"><span>Name</span></th>
+                    <th md-column md-order-by="industry"><span>Industry</span></th>
+                    <th md-column md-order-by="subIndustry"><span>Sub Industry</span></th>
+                    <th md-column md-order-by="salesforce"><span>Salesforce</span></th>
+                    <th md-column md-order-by="companyType"><span>Company Type</span></th>
+                    <th md-column md-order-by="levelOfOffice"><span>Level Of Office</span></th>
+                    <th md-column md-order-by="location"><span>Location</span></th>
+                    <th md-column md-numeric md-order-by="contact"><span>Contact</span></th>
+                    <th md-column md-order-by="email"><span>Email</span></th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row md-select="data" md-select-id="Name" md-auto-select ng-repeat="tableData in tableDatas | toArray:false | filter:search | orderBy: query.order">
+                    <td md-cell>{{tableData.Name}}</td>
+                    <td md-cell>{{tableData.industry}}</td>
+                    <td md-cell>{{tableData.subIndustry}}</td>
+                    <td md-cell>{{}}</td>
+                    <td md-cell>{{tableData.companyType}}</td>
+                    <td md-cell>{{tableData.levelOfOffice}}</td>
+                    <td md-cell>{{tableData.location}}</td>
+                    <td md-cell>{{tableData.contact}}</td>
+                    <td md-cell>{{tableData.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </md-table-container>
 </md-card>
 <footer class="page-footer center-on-small-only" style="margin-top: 50%">
     <div class="footer-copyright">
