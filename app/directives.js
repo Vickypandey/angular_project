@@ -2,27 +2,27 @@
 
 angular.module('myApp.directives', [])
 
-.directive ('star', function($interpolate) {
+// .directive ('star', function($interpolate) {
 
-  var lists = [];
+//   var lists = [];
 
-      return {
+//       return {
 
-        restrict : "C",
+//         restrict : "C",
 
-         link : function(scope, element, attr){
-          console.log(scope.companyArray[attr.dataid]);
+//          link : function(scope, element, attr){
+//           // console.log(scope.companyArray[attr.dataid]);
 
-          scope.toggle = function(list) {
-            console.log(list);
+//           scope.toggle = function(list) {
+//             console.log(list);
 
 
-          }
+//           }
 
-         }
+//          }
         
-      }
-    })
+//       }
+//     })
 
 /*
  * angular-google-plus-directive v0.0.2

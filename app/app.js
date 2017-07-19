@@ -2,7 +2,7 @@
 
 // Declare app level module which depends on views, and components
 
-angular.module('myApp', ['ui.router','myApp.controllers', 'myApp.services', 'myApp.directives', 'angucomplete-alt','ngTouch','ngMaterial', 'mdDataTable']) 
+angular.module('myApp', ['ui.router','myApp.controllers', 'myApp.services', 'myApp.directives', 'angucomplete-alt','ngTouch','ngMaterial',  'checklist-model', 'md.data.table', 'fixed.table.header', 'angular-toArrayFilter']) 
 
 // .run(function($rootScope,$state) {
 //   $rootScope.$on('api:ready', function (event) {

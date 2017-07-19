@@ -1,4 +1,16 @@
-<main style="padding-top: 3rem;padding-bottom: 2rem">
+<header>
+    <nav class="navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar mdb-color lighten-3">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <a class="navbar-brand" href="#"> <strong>Home</strong> </a>
+            <div class="collapse navbar-collapse" id="navbarNav1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"> <a class="nav-link" href="#about">Mailbox</a> </li>
+                </ul> <a href="#" id="show_login" class="nav-link waves-effect waves-light"><i class="fa fa-sign-out"></i><span class="hidden-sm-down">Logout</span></a> </div>
+        </div>
+    </nav>
+</header>
+<main style="padding-top: 5rem;padding-bottom: 2rem">
     <div class="container">
         <div class="row">
             <div class="col-md-3 wow fadeIn" data-wow-delay="0.2s">
@@ -8,14 +20,29 @@
                     </div>
                     <div class="card-block">
                         <fieldset id="scheduler-border">
+
                             <legend id="scheduler-border">No of Employees</legend>
-                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="data.cb5" class="">1</md-checkbox>
-                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="data.cb6" class="">2</md-checkbox>
-                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="data.cb7" class="">3</md-checkbox>
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn1" class="">1</md-checkbox>
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn2" class="">2</md-checkbox>
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn3" class="">3</md-checkbox>
                         </fieldset>
-                        <div>
-                            <button class="btn btn-default" ng-click="export()">Export</button>
-                        </div>
+                        <hr>
+                        <fieldset id="scheduler-border1">
+
+                            <legend id="scheduler-border">Turnover</legend>
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn4" class="">1</md-checkbox>
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn5" class="">2</md-checkbox>
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn6" class="">3</md-checkbox>
+                        </fieldset>
+                        <hr>
+                        <fieldset id="scheduler-border2">
+
+                            <legend id="scheduler-border">Sector</legend>
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn7" class="">1</md-checkbox>
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn8" class="">2</md-checkbox>
+                            <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="btn9" class="">3</md-checkbox>
+                        </fieldset>
+                        
                     </div>
                 </div>
             </div>
@@ -24,12 +51,22 @@
             </div> -->
             <div co-md-9>
                 <div class="wow fadeIn" data-wow-delay="0.2s">
-                    
-                    <div class="list-group content cd1">
+                <div class="card cd1" style="margin-bottom: 5px">
+                <div class="row">
+                    <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model= "master" ng-change="isSelectAll()" class= "selectall" >Select All</md-checkbox>
+                    <div class="_export">
+                    <button class="btn btn-default" ng-click="export()">Export</button>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- <input type="checkbox" ng-model="master" ng-change="isSelectAll()">
+                <label>Select All</label> --> 
+                    <div class="content cd1">
                         <div class="list-group-item search-result" ng-repeat="(key, value) in companyArray">
                         <div class="check">
-                        <input type="Checkbox" class="star" title="bookmark page" ng-model = "value.checklist" dataid="{{ key }}">
-                            <!-- <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="companyDetail.checklist" class="check1"></md-checkbox> -->
+                        <!-- <input type="Checkbox" class="star" title="bookmark page" ng-model = "value.checklist" dataid="{{ key }}"> -->
+                            <input type="checkbox" ng-model="value.selected" class="star" ng-value="value" ng-change="isLabelChecked()"/>
                         </div>
                             <div class="flex-column" style="width: 30rem">
                                 <table>
@@ -66,9 +103,9 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="pull-right connect">
-                                <button class="btn btn-default" ng-click="showAdvanced($event)">Connect</button>
-                            </div>
+                            
+                            <button class="btn btn-default" ng-click="showAdvanced($event)">Connect</button>
+                            
                         </div>
                     </div>
                     
@@ -77,6 +114,7 @@
         </div>
     </div>
 </main>
+<!-- <p>{{model.selectedLabelList}}</p> -->
 <footer class="page-footer center-on-small-only">
     <div class="footer-copyright">
         <div class="container-fluid">

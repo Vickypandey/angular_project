@@ -18,9 +18,25 @@ angular.module('myApp.services', [])
 	return authFact;
 })
 
+.factory('dataservice', function(){
+
+  var data = {};
+
+  return {
+
+  setData : function(datas){
+    data = datas;
+
+  },
+  getData : function() {
+    return data;
+  }
+}
+
+})
+
 .factory('companydetailService', function() {
   // Might use a resource here that returns a JSON array
-
  var companydetail = {
 
             data1 : {

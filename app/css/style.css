@@ -2,7 +2,7 @@
 
 body,
 html {
-    background-color: #eee!important;
+    background-color: #e9ebee!important;
 }
 
 .form-header {
@@ -113,17 +113,6 @@ form.form-inline {
     padding: 25px !important;
 }
 
-footer.page-footer.blue.center-on-small-only {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-
-/*#ex1_dropdown {
-    overflow-y: auto;
-    max-height: 200px;
-}
-*/
 
 md-autocomplete-wrap.layout-row.md-whiteframe-z1 {
     height: 47px;
@@ -201,6 +190,20 @@ fieldset#scheduler-border {
     padding-left: 15px;
 }
 
+fieldset#scheduler-border1 {
+    border: 1px solid;
+    display: flex;
+    padding-right: 135px;
+    padding-left: 15px;
+}
+
+fieldset#scheduler-border2 {
+    border: 1px solid;
+    display: flex;
+    padding-right: 152px;
+    padding-left: 15px;
+}
+
 legend#scheduler-border {
     font-size: 1rem;
 }
@@ -231,7 +234,7 @@ md-dialog.md-transition-in {
     min-width: 400px!important;
 }
 
-.cd1 {
+.card.cd1 {
     box-shadow: rgba(0, 0, 0, 0.156863) 0px 1px 1px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 2px 0px;
 }
 
@@ -254,3 +257,42 @@ md-dialog.md-transition-in {
 }
 
 /*star*/
+
+div md-checkbox.selectall {
+    margin: 20px 35px 20px 35px !important;
+}
+
+._export {
+    margin: 5px 0px 0px 400px;
+}
+
+table.md-table td.md-cell {border-left: 1px rgba(0, 0, 0, 0.12) solid; padding: 0 24px !important;}
+
+table.md-table th.md-column {
+    /*color: red !important;*/
+    border: 1px rgba(0, 0, 0, 0.12) solid; padding: 0 24px !important;
+    border-left: 1px rgba(0, 0, 0, 0.12) solid; padding: 0 24px !important;
+    background-color: rgb(0,255,255) !important;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eee), color-stop(1, #fff));
+}
+
+
+table.md-table th {
+    text-align: left !important;
+}
+
+table.md-table td {
+    text-align: center !important;
+}
+
+table.md-table th.md-column {
+    color:  rgba(0, 0, 0, 0.87) !important;
+}
+
+table.md-table md-icon.md-sort-icon{
+    color: rgba(0, 0, 0, 0.87) !important; 
+}
+
+table.md-table tr.md-row {
+    height: 45px !important;
+} 
