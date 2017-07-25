@@ -308,3 +308,32 @@ table.md-table md-icon.md-sort-icon {
 table.md-table tr.md-row {
     height: 45px !important;
 }
+
+.glyphicon-lg{font-size:3em}
+.blockquote-box{margin-bottom:25px}
+.blockquote-box .square{
+    width:100px;
+    min-height:50px;
+    text-align:center!important;
+    padding:8px 30px;
+}
+
+div .square img {
+    width: 80px;
+    height: 80px;
+}
+ul .list, .list li {
+    list-style-type: square !important;
+}
+div .card.dash {
+    margin-top: 4rem;
+    box-shadow: rgba(0, 0, 0, 0.156863) 0px 1px 1px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 1px 0px;
+}
+
+div .wrapper {
+    padding: 40px 20px 0px 20px;
+}
+
+div .dash1 h5 {
+    color: #656565;
+}

@@ -43,9 +43,11 @@ angular.module('myApp', ['ui.router', 'myApp.controllers', 'myApp.services', 'my
                 controller: 'tableCtrl'
             })
 
-            .state('connect', {
-                url: '/connect',
-                templateUrl: 'partials/connect.html'
+
+            .state('dashboard', {
+                url: '/dashboard',
+                templateUrl: 'partials/dashboard.html'
+                // controller: 'DashCtrl'
             })
 
         // if none of the above states are matched, use this as the fallback
